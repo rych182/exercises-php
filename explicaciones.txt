@@ -1,0 +1,73 @@
+var_dump() :proporciona información sobre el tamaño y tipo de datos de la variable y, en el caso de arrays y objetos, de los elementos que la componen. 
+print_r no da información sobre el tamaño de la variable ni sobre el tipo de datos.
+strlen($name); cuenta cuantos caracteres y espacios hay
+count($variable); cuenta cuantas posiciones de memoria tiene el arreglo
+str_replace(' ','',$saludo); reemplaza caracteres
+-gettype(); te dice que tipo de dato contiene la variable
+ECHO VS PRINT: echo puede concatenar con comas y print NO
+str_word_count("Hello world!"); // outputs 2
+strpos("Hello World","Hello"); // Busca en que posicion se encuentra la palabra que buscas.
+strrev("Hello world!"); palabras y números al reves
+
+----------------------------------------------------------------------------------------------------------------------
+FUNCIONES PARA NÚMEROS
+is_int($x) te dice si el número es entero o no(si tiene punto decimal, es float)
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+FUNCIONES PARA ARREGLOS
+
+- array_push($array,"cosa"); te lo arregla al final del arreglo
+-unset($array[1]); borra la posición de memoria 
+-foreach: esta diseñado para recorrer arrays
+-sort($var); te ordena el array en orden alfabetico
+
+-----------------------------------------------------------------------------------------------------------------------
+Operadores(temas iniciales y se ven cuando "enseñas condicionales if" )
+¿En que momento usar un IF dentro de otro IF(si se cumple una cosa puedes poner un if dentro)
+
+
+Operadores aritmeticos:
++ Suma
+- Resta
+* Multiplicación 
+/ División
+%(modulo) sirve para sacar el residuo de una división
+
+
+Operadores de asignación:
+=
++=
+-=
+*=
+/=
+
+Operadores de comparación
+== igualdad
+=== identico (en tipo de dato, SE UTILIZA mucho en seguridad, para que la info sea igual tanto en valor como en dato) 
+< menor que
+> mayor que
+<= menor o igual que
+>=mayor o igual que
+!= Diferente
+! negacion
+
+OPERADORES DE INCREMENTO
+i++
+i--
+++i
+--i
+
+TIPOS DE datos
+-String: cadena de texto
+-Integer: no debe de tener punto decimal, puede ser positivo y negativo, 
+-Float (also called double): números con decimales
+-Boolean: true or false
+-Array: cadenas que almacenan multiples valores en una variable simple 
+-Object: clases y objetos son dos de aspectos principales de la programación orientada a objetos.
+Una clase es una plantilla para objetos y un objeto es una instacia de una clase
+Cuando se crean los objetos individuales, heredan todas las propiedades y comportamientos de la clase, 
+pero cada objeto tendrá diferentes valores para las propiedades.
+-NULL: cuando una variable no esta definida, se le asigna nullo por default
+-Resource
