@@ -12,7 +12,11 @@ strrev("Hello world!"); palabras y números al reves
 ----------------------------------------------------------------------------------------------------------------------
 FUNCIONES PARA NÚMEROS
 is_int($x) te dice si el número es entero o no(si tiene punto decimal, es float)
-
+min(0, 150, 30, 20, -8, -200, -300) te imprime el número menor, también acepta arrays
+max(0, 150, 30, 20, -8, -200, -300) te imprime el número mayor, también acepta arrays
+abs(-6.7) función que retorna el absoluto(osea un número POSITIVO)
+sqrt(64) función que saca la raíz cuadrada
+round(1.49) funcion para redondear un número hacia arriba o hacia abajo
 
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -23,6 +27,13 @@ FUNCIONES PARA ARREGLOS
 -foreach: esta diseñado para recorrer arrays
 -sort($var); te ordena el array en orden alfabetico
 
+-----------------------------------------------------------------------------------------------------------------------
+
+FUNCIONES PARA ARREGLOS ASOCIATIVOS
+asort($personas): ordena una matriz asociativa en orden ascendente, según el VALOR(debes imprimirlo con un foreach)
+ksort($personas): ordena una matriz asociativa en orden ascendente, según el KEY(debes imprimirlo con un foreach)
+arsort($personas): ordena una matriz asociativa en orden descendente, según el VALOR(debes imprimirlo con un foreach)
+krsort($personas): ordena una matriz asociativa en orden descendente, según el KEY(debes imprimirlo con un foreach)
 -----------------------------------------------------------------------------------------------------------------------
 Operadores(temas iniciales y se ven cuando "enseñas condicionales if" )
 ¿En que momento usar un IF dentro de otro IF(si se cumple una cosa puedes poner un if dentro)

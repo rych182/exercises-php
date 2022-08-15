@@ -1,9 +1,17 @@
 <?php
-$variable = "Hello world";
 
-echo str_replace("world", "mundo", $variable);
+$personas = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+krsort($personas);
+
+foreach ($personas as $persona => $edad) {
+    echo "Mi nombre es ".$persona. " y tengo ".$edad. " años <br>";
+}
 
 
+
+/*
+
+*/
 
 
 
@@ -20,7 +28,8 @@ echo $resultado;
 
 EJERCICIO 0.02: Explicación de operador aritmetico 
 
-$num1 = 10;
+$num1 = 1
+0;
 $num2= 6;
 
 $num1 = $num1 + 19;
@@ -79,7 +88,37 @@ $num1 = 10;
 echo $num1++ . "<br>";
 echo $num1;
 
-Ejercicio 0.010: 
+Ejercicio 0.010: Una constante con un array dentro
+define('nombres', ['Ric','kellly','Neil']);
+echo nombres[2];
+
+Ejercicio 0.011: Imprimir exponencialmente
+$x = 2;
+$y = 4;
+echo $x ** $y;
+
+Ejercicio 0.012: operador "no es identico"
+$x = 100;  
+$y = "100";
+var_dump($x !== $y);
+
+Ejercicio 0.012: operador "no es igual", retorna falso porque los valores no son iguales
+$x = 100;  
+$y = "100";
+var_dump($x != $y);
+
+
+Ejercicio 0.013: operador "igual en dato y tipo de dato", retorna falso porque los valores son iguales pero no son el mismo tipo de dato
+$x = 100;  
+$y = "100";
+
+var_dump($x === $y);
+
+Ejercicio 0.014: concatena un valor usando el operador .=
+ $txt1 = "Hello";
+$txt2 = " world!";
+$txt1 .= $txt2;
+echo $txt1;
 
 
 
@@ -177,11 +216,69 @@ for ($i=33; $i >10 ; $i--) {
     echo $i. "<br>";
 }
 
+Ejercicio 1.11: Recorre un arreglo INDEXADO
+$cars = array("Volvo", "BMW", "Toyota");
+$arrlength = count($cars);
+
+for($x = 0; $x < $arrlength; $x++) {
+  echo $cars[$x];
+  echo "<br>";
+}
+
+
 Ejercicio 1.2: imprime los datos del array utilizando foreach
 $frutas = array('pera','uva','manzana','melon','sandia','durazno','guayaba','naranja','mandarina');
 foreach ($frutas as $fruta) {
     echo $fruta. "<br>";
 }
+
+
+Ejercicio 1.21: Imprime los valores completo de un array asociativo usando forEach
+$personas = ['lalo'=>35,"ruben"=>34,"gemelo"=>33];
+foreach ($personas as $persona => $value) {
+    echo $persona." tiene ".$value." años<br>";
+}
+
+
+Ejercicio 1.22: Imprime un array asociativo con sus valores
+$personas = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+foreach($personas as $persona => $edad) {
+  echo "Key=" . $x . ", Value=" . $edad;
+  echo "<br>";
+}
+
+Ejercicio 1.23: Imprime una lista de autos guardada en un array multidimensional, cada array debe de tener autos de la misma marca y cuando comience una marca distinta
+imprimir que marca de autos son.
+
+$cars = [
+    ["Altima","Armasa","March"],
+    ["Lobo","Expedition","Fiesta"],
+    ["Civic","City","Acord"]
+];
+$companies = ["Nissan","Ford","Honda"];
+
+echo "<ol>";
+for ($i=0; $i < count($companies) ; $i++) { 
+    echo "<h2>". $companies[$i]. "</h2>";
+    for ($j=0; $j < count($cars[$i]); $j++) { 
+        if ($j< count($cars[$i])) {
+            echo "<li>".$cars[$i][$j]."</li>";
+        }else {
+            break;
+        }
+        
+    }
+        
+}
+echo "</ol>";
+
+TIPS
+-Primero imprimir el número de veces que haya cosas en el array multidimensional
+-Lueego imprimir todos los valores que tenga adentro el array multidimensional
+-intentar ponerle una condición
+
+
 
 Ejercicio 1.3: imprimir en una lista de HTML los meses del año que están dentro un array.
 $meses = ['enero',"febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
@@ -323,6 +420,14 @@ if ($nacionalidad != "coreana") {
         }
     }
 }
+
+Ejercicio 2.8 SHORT IF
+$txt1 = 2;
+$txt2 = 3;
+
+echo ($txt1 == $txt2)? "son iguales" : "Son diferentes";
+
+
 --------------------------------------EJERCICIOS CON IF-ELSE y FOR-----------------------------------------------------
 
 Ejercicio 3(inventado por mi); con FOR hacer un bucle que imprima el cuadrado de los números del 1-30 y que te digan si es par o inpar
@@ -373,6 +478,13 @@ while ($a <= 20) {
     $a+=2; 
 }
 
+Ejercicio 6: DO WHILE
+$x = 6;
+
+do {
+  echo "The number is: $x <br>";
+  $x++;
+} while ($x <= 5);
 
 
 -------------------------------------------EJERCICIOS WHILE CON OTRA FUNCIÓN-------------------------------------
@@ -478,9 +590,109 @@ echo "<br>";
 $x = 59.85;
 var_dump(is_int($x));
 
-Ejercicio 9.4: que te diga si el número es decimal ó flotant
+Ejercicio 9.31: que te diga si el número es decimal ó flotant
 $x = 10.365;
 var_dump(is_float($x));
+
+EJERCICIO 9.32: Usa la función is_numeric() para saber si la variable es un número
+$x = 5985;
+var_dump(is_numeric($x));
+
+echo "<br>";
+
+$x = "5985";
+var_dump(is_numeric($x));
+
+echo "<br>";
+
+$x = "59.85" + 100;
+var_dump(is_numeric($x));
+
+echo "<br>";
+
+$x = "Hello";
+var_dump(is_numeric($x));
+
+
+EJERCICIO 9.33: Convierte el tipo de dato a entero utilizando la función intval() o (int) ó (integer)
+
+$x = 23465.768;
+$int_cast = intval($x);
+echo $int_cast;
+  
+echo "<br>";
+
+// Cast string to int
+$x = "23465.768";
+$int_cast = intval($x);
+echo $int_cast;
+
+EJERCICIO 9.34: Imprime el valor de PI con una función
+echo(pi());
+
+EJERCICIO 9.35: Imprime el número menor
+echo(min(0, 150, 30, 20, -8, -200, -300));
+
+EJERCICIO 9.36: Imprime el número menor de un array usando la función "min()"
+echo(min([0, 150, 30, 20, -8, -200, -300]));
+
+EJERCICIO 9.37: Imprime el número menor
+echo(max(0, 150, 30, 20, -8, -200, -300));
+
+EJERCICIO 9.38: Imprime el número menor de un array usando la función "max()"
+echo(max([0, 150, 30, 20, -8, -200, -300]));
+
+Ejercicio 9.39: Imprime el número absoluto(osea lo pasa a POSITIVO)
+echo(abs(-6.7));
+
+Ejercicio 9.4: Imprime la raiz cuadrada
+echo(sqrt(64));
+
+Ejercicio 9.41: Redondea el número hacia abajo o hacia arriba según este más cerca
+echo(round(1.49));
+
+Ejercicio 9.42: Gnera un número aleatorio
+echo(rand());
+
+Ejercicio 9.42: Gnera un número aleatorio de X número a Y número.
+echo(rand(10,100));
+
+
+
+--------------------------------------EJERCICIOS FUNCIONES PHP PARA ARRAYS----------------------------------------------
+Ejercicio 9.6: ordena una matriz asociativa en orden ascendente, según el VALOR
+
+$personas = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+asort($personas);
+
+foreach ($personas as $persona => $edad) {
+    echo "Mi nombre es ".$persona. " y tengo ".$edad. " años <br>";
+}
+
+Ejercicio9.61: ordena una matriz asociativa en orden ascendente, según el KEY(la letra con la que comienza el nombre)
+$personas = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+ksort($personas);
+
+foreach ($personas as $persona => $edad) {
+    echo "Mi nombre es ".$persona. " y tengo ".$edad. " años <br>";
+}
+
+Ejercicio 9.62: ordena una matriz asociativa en orden "descendente", según el VALOR
+$personas = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+arsort($personas);
+
+foreach ($personas as $persona => $edad) {
+    echo "Mi nombre es ".$persona. " y tengo ".$edad. " años <br>";
+}
+
+
+Ejercicio 9.63: ordena una matriz asociativa en orden "descendente", según el KEY(la letra con la que comienza el nombre)
+$personas = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+krsort($personas);
+
+foreach ($personas as $persona => $edad) {
+    echo "Mi nombre es ".$persona. " y tengo ".$edad. " años <br>";
+}
 
 
 --------------------------------------EJERCICIOS CONSTANTES-VARIABLES----------------------------------------------
@@ -553,11 +765,80 @@ function myTest() {
     echo $x ."<br>";
     $x++;
   }
+
   
   myTest();
   myTest();
   myTest();
 
+Ejercicio 12.04: funciones modo estricto sin declare(strict_types=1);
+function addNumbers(int $a, int $b) {
+  return $a + $b;
+}
+echo addNumbers(5, "4 days");
+
+function addNumbers(int $a, int $b) {
+  return $a + $b;
+}
+echo addNumbers(5, "5 days");
+
+
+Ejercicio 12.05: funciones modo estricto CON declare(strict_types=1);, mostrarle que marca error
+declare(strict_types=1);
+function addNumbers(int $a, int $b) {
+  return $a + $b;
+}
+echo addNumbers(5, "5 days");
+
+
+Ejercicio 12.05: funciones modo estricto CON declare(strict_types=1);, ya bien hecho
+declare(strict_types=1);
+function addNumbers(int $a, int $b) {
+  return $a + $b;
+}
+echo addNumbers(5, 5);
+
+
+Ejercicio 12.06: argumentos por default en una función
+declare(strict_types=1);
+function addNumbers(int $a, int $b = 5) {
+  return $a + $b;
+}
+echo addNumbers(5);
+
+
+Ejercicio 12:07: Usando return en una función
+declare(strict_types=1); // strict requirement
+function sum(int $x, int $y) {
+  $z = $x + $y;
+  return $z;
+}
+
+echo "5 + 10 = " . sum(5, 10) . "<br>";
+echo "7 + 13 = " . sum(7, 13) . "<br>";
+echo "2 + 4 = " . sum(2, 4);
+
+
+Ejercicio 12.08: pedir datos en un tipo de dato específico y devolverlos en un tipo de dato específico
+declare(strict_types=1); // strict requirement
+function addNumbers(float $a, float $b): float {
+  return $a + $b;
+}
+echo addNumbers(1.3, 5.8);
+
+
+Ejerciciio 12.09
+Puede especificar un tipo de devolución diferente a los tipos de argumento, pero asegúrese de que la devolución sea del tipo correcto:
+declare(strict_types=1); // strict requirement
+function addNumbers(float $a, float $b) : int {
+  return (int)($a + $b);
+}
+echo addNumbers(1.2, 5.2);
+
+
+
+
+--------------------------------------EJERCICIOS CON OBJETOS----------------------------------------------
 EJERCICIO 13.01: Crear mi primer objeto e imprimir una PROPIEDAD.
 class Car {
     public $color="red";
