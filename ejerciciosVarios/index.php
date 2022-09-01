@@ -1,14 +1,25 @@
 <?php
 
-$personas = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
-krsort($personas);
-
-foreach ($personas as $persona => $edad) {
-    echo "Mi nombre es ".$persona. " y tengo ".$edad. " años <br>";
+class SerVivo{
+    public function respirar()
+    {
+        echo "estoy respirando";
+    }
 }
 
+class Humano extends SerVivo{
+    public function razonan(){
+        echo "estoy razonando";
+    }
+}
 
+$objeto = new Humano();
+$objeto->respirar();
 
+#Cosas que estamos cumpliendo:
+#Abstracción: nuevos tipos de datos, el que tu quieras, tu lo creas(otro automovil)
+#Encapsulmiento: organizar el código en grupos lógicos, una primera capsula que es la clase y otra el objeto
+#ocultaminto: oculta detalles de implementación y exponer solo los detalles que sean necesarios para el resto del sistema
 /*
 
 */
@@ -225,6 +236,17 @@ for($x = 0; $x < $arrlength; $x++) {
   echo "<br>";
 }
 
+Ejercicio 1.12: Imprime el factorial usando FOR
+$factorial = 1;
+$num = 12;
+
+for ($cont=1; $cont <$num ; $cont++) { 
+    $factorial *= $cont;
+}
+
+echo "el factorial de ". $num. " es:" . $factorial;
+
+
 
 Ejercicio 1.2: imprime los datos del array utilizando foreach
 $frutas = array('pera','uva','manzana','melon','sandia','durazno','guayaba','naranja','mandarina');
@@ -275,7 +297,7 @@ echo "</ol>";
 
 TIPS
 -Primero imprimir el número de veces que haya cosas en el array multidimensional
--Lueego imprimir todos los valores que tenga adentro el array multidimensional
+-Lueego imprimir todos los valores que tenga  adentro el array multidimensional
 -intentar ponerle una condición
 
 
@@ -464,7 +486,7 @@ for ($i=1; $i <= 50; $i++) {
 
 -----------------------------------------------EJERCICIOS CON WHILE----------------------------------------------
 
-Ejercicio 4: Usando WHILE imprime los números del 1-20 de 2 en 2 u, 
+Ejercicio 4: Usando WHILE imprime los números d el 1-20 de 2 en 2 u, 
 $a=0;
 while ($a <= 20) {
     echo $a." <br>";
@@ -657,6 +679,9 @@ echo(rand());
 Ejercicio 9.42: Gnera un número aleatorio de X número a Y número.
 echo(rand(10,100));
 
+Ejercicio 9.43: Geenera el resultado de un número a la potencia que tu le digas.
+echo pow(2,4);
+
 
 
 --------------------------------------EJERCICIOS FUNCIONES PHP PARA ARRAYS----------------------------------------------
@@ -695,10 +720,33 @@ foreach ($personas as $persona => $edad) {
 }
 
 
---------------------------------------EJERCICIOS CONSTANTES-VARIABLES----------------------------------------------
+--------------------------------------EJERCICIOS CONSTANTES----------------------------------------------
+constants predefinidas: https://www.php.net/manual/es/language.constants.predefined.php#:~:text=Constantes%20predefinidas%20%C2%B6,o%20porque%20han%20sido%20compiladas.
+
+
 Ejercicio 10: Imprimir una constante
 define('Saludo',"Hola, ¿Cómo estas?!");
 echo Saludo;
+
+Ejercicio 10.1: imprimir una constante con minúscula y que este repetida.(Con true te imprime LA SEGUNDA constante)
+define('HOLA', 'Hello',true);
+define('HOLA', 'Ni hao');
+
+echo HELLO;
+
+Ejercicio 10.2: imprimir una constante con minúscula usando TRUE.
+define('HOLA', 'Hello',true);
+define('HOLA', 'Ni hao');
+
+echo hello;
+
+Ejercicio 10.3: Imprimir constantes PREDEFINIDAS
+echo "Constante prefedinda FILE: ". __FILE__ ."<br>";
+echo "Constante prefedinda LINE: ". __LINE__ ."<br>";
+echo "Constante prefedinda DIR: ". __DIR__ ."<br>";
+
+
+
 
 --------------------------------------EJERCICIOS SWITCH----------------------------------------------
 
@@ -923,6 +971,15 @@ $myCar = new Car();
 $myCar->color="blue";
 $myCar->model="ford";
 $myCar->llantas="Pirelli";
+$factorial = 1;
+$num = 12;
+
+for ($cont=1; $cont <$num ; $cont++) { 
+    $factorial *= $cont;
+}
+
+echo "el factorial de ". $num. " es:" . $factorial;
+
 echo $myCar->imprimir();
 
 
@@ -994,7 +1051,181 @@ $miAuto->llantas = "Bridgeton";
 echo $miAuto->imprimir();
 
 
+EJERCICIO 13.11: crear un objeto de otra manera.
+$auto1 = (object)["marca"=>"Toyota","modelo"=>"Corolla"];
+var_dump($auto1);
 
+Ejercicio 13.12: Crear un objeto con código spaguetti(imperativo)
+$auto1 = (object)["marca"=>"Toyota","modelo"=>"Corolla"];
+$auto2 = (object)["marca"=>"Hyundai","modelo"=>"Accent Vision"];
+
+function mostrar($auto){
+    echo "<p>Hola! sou un $auto->marca, modelo $auto->modelo</p>";
+}
+var_dump($auto1);
+mostrar($auto1);
+mostrar($auto2);
+
+Ejercicio 13.13: Explicar anstracción, ocultamiento, encapsulamiento
+class auto{
+    public $marca;
+    public $modelo;
+
+    function ejecutar(){
+        echo "Mi auto es un $this->marca modelo $this->modelo";
+    }
+}
+
+$car1 = new auto();
+$car1->marca="Nissan";
+$car1->modelo="Sentra";
+$car1->ejecutar();
+
+
+$car2 = new auto();
+$car2->marca="Volswagen";
+$car2->modelo="Jetta";
+$car2->ejecutar();
+
+#Cosas que estamos cumpliendo:
+#Abstracción: nuevos tipos de datos, el que tu quieras, tu lo creas(otro automovil)
+#Encapsulmiento: organizar el código en grupos lógicos, una primera capsula que es la clase y otra el objeto
+#ocultaminto: oculta detalles de implementación y exponer solo los detalles que sean necesarios para el resto del sistema
+
+Ejercicio 13.14: Imprimir hola mundo usando un metodo mágico dentro de una clase.
+class Persona{
+    public function __construct()
+    {
+     echo "Hola mundo";   
+    }
+}
+$fulano = new Persona("Hello world");
+
+
+Ejercicio 13.15: Imrpimir un hola mundo con un objeto con un metodo mágico, pasando el valor por el objeto
+
+
+class Persona{
+    public function __construct($texto)
+    {
+     echo $texto;   
+    }
+}
+$fulano = new Persona("Hello world");
+
+
+Ejercicio 13.16: Pasarle 2 valores.
+class Persona{
+    public function __construct($texto,$num)
+    {
+     echo $texto,$num;   
+    }
+}
+$fulano = new Persona("Hello world",2);
+
+
+Ejercicio 13.16: Pasarle 2 valores exiguiendo tipos de datos
+class Persona{
+    public function __construct(string $texto,array $num)
+    {
+    $datos = var_dump($num);
+     echo $texto."<br>". $datos;   
+    }
+}
+
+$cadena = [1,2,3];
+
+$fulano = new Persona("Hello world",[1,2,3]);
+
+
+
+Ejercicio 13.17: Imprimir una propiedad privada
+class Persona{
+
+    private $nombre = "Ric";
+
+    public function __construct($texto)
+    {
+    
+     echo $texto."<br>";   
+    }
+
+    public function imprimir()
+    {
+        echo $this->nombre;
+    }
+}
+
+$fulano = new Persona("Hello world");
+$fulano->imprimir();
+
+Ejercicio 13.18: Cambiar y mostrar una propiedad privada
+
+class Persona{
+
+    private $nombre = "Ric";
+
+    public function __construct($texto)
+    {
+    
+     echo $texto."<br>";   
+    }
+
+    public function imprimir()
+    {
+        echo $this->nombre;
+        $this->nombre = "<br>Uli";
+        echo $this->nombre;
+    }
+}
+
+$fulano = new Persona("Hello world");
+$fulano->imprimir();
+
+
+Ejercicio 13.19:Modifica la propiedad privada pasando el valor por el metodo
+
+class Persona{
+
+    private $nombre = "Ric";
+
+    public function __construct($texto)
+    {
+    
+     echo $texto."<br>";   
+    }
+
+    public function imprimir($info)
+    {
+        echo $this->nombre;
+        $this->nombre = $info;
+        echo $this->nombre;
+    }
+}
+
+$fulano = new Persona("Hello world");
+$fulano->imprimir("Mimo Chon");
+
+
+Ejercicio 13.20:ejecutar un metodo de un objeto, que contenga la ejecución de un metodo que modifique el valor de una propiedad privada y que muestre el valor
+class Persona{
+
+    private $nombre = "Ric";
+
+    public function modificar($info)
+    {
+        $this->nombre = $info;
+        $this->imprimir();
+    }
+
+    public function imprimir()
+    {   
+        echo $this->nombre;
+    }
+}
+
+$fulano = new Persona();
+$fulano->modificar("Mimo Chon");
 
 
 
