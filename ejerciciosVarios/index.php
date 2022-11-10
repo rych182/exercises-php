@@ -1,4 +1,17 @@
 <?php
+$factorial = 1;
+$numero = 5;
+for ($contador=2; $contador <=$numero ; $contador++) { 
+    $factorial = $factorial * $contador;
+    echo $factorial . "<br>";
+}
+
+
+
+
+
+
+
 
 #Cosas que estamos cumpliendo:
 #Abstracción: nuevos tipos de datos, el que tu quieras, tu lo creas(otro automovil)
@@ -1211,11 +1224,18 @@ class Persona{
         echo $this->nombre;
     }
 }
->>>>>>> 2f5c0fbe01d2ac7718805755c9249eb37e0aa82d
+
 
 $fulano = new Persona();
 $fulano->modificar("Mimo Chon");
-
+-------------------------------------Ejercicios pruebas tecnicas-----------------------
+14- sacar el número factorial
+$factorial = 1;
+$numero = 5;
+for ($contador=2; $contador <=$numero ; $contador++) { 
+    $factorial = $factorial * $contador;
+    echo $factorial . "<br>";
+}
 
 
 */
