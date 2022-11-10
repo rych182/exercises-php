@@ -1,13 +1,5 @@
 <?php
 
-$factorial = 1;
-$numero = 5
-
-for ($contador=1; $contador <=$numero; $contador++) { 
-    $factorial = $factorial * $contador;
-}
-
-
 #Cosas que estamos cumpliendo:
 #Abstracción: nuevos tipos de datos, el que tu quieras, tu lo creas(otro automovil)
 #Encapsulmiento: organizar el código en grupos lógicos, una primera capsula que es la clase y otra el objeto
