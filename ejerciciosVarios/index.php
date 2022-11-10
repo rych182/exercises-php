@@ -1,7 +1,11 @@
 <?php
-$variable = "Hello world";
 
-echo str_replace("world", "mundo", $variable);
+$factorial = 1;
+$numero = 5
+
+for ($contador=1; $contador <=$numero; $contador++) { 
+    $factorial = $factorial * $contador;
+}
 
 
 
@@ -712,7 +716,8 @@ $miAuto = new Car("verde","Ibiza");
 $miAuto->llantas = "Bridgeton";
 echo $miAuto->imprimir();
 
-
+--------------------------------------------EJERCICIOS PRUEBAS TÉCNICAS--------------------------------------
+Ejercicio 14.01: FACTORIAL DE UN NÚMERO !5= 5x4=20*3=60*2=120x1=120
 
 
 
